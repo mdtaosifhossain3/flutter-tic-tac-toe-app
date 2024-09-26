@@ -43,7 +43,7 @@ class _GameScreenState extends State<GameScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text(
-                    "Tic Tack Toe Game",
+                    "Tic Tac Toe Game",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
