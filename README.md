@@ -1,5 +1,8 @@
 # Tic-Tac-Toe with AI
 
+![image alt](https://github.com/mdtaosifhossain3/flutter-tic-tac-toe-app/blob/91a5d30023d91c6d37a2723dca4ad3dbf9acd6b3/tic-tak-toe.png)
+
+
 ## Overview
 This project is a simple yet interactive Tic-Tac-Toe game built with Flutter. Users can enjoy playing against an AI opponent, making the game both challenging and engaging. The winner is displayed via a custom dialog using the `showDialog` widget.
 
