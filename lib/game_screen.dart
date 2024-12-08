@@ -31,9 +31,10 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff5A1E76),
+
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -43,8 +44,8 @@ class _GameScreenState extends State<GameScreen> {
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 35),
-              ),
-              const SizedBox(height: 15),
+              ), const SizedBox(height: 15),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -99,7 +100,7 @@ class _GameScreenState extends State<GameScreen> {
       children: [
         Text(
           label,
-          style: TextStyle(color: color, fontSize: 20, fontWeight: FontWeight.bold),
+          style: TextStyle(color: color, fontSize: 22, fontWeight: FontWeight.bold),
         ),
         Text(
           score.toString(),
