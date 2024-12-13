@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/game_screen.dart';
+import 'package:tic_tac_toe/otpView/otp_send_view.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen>
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const GameScreen()), // Link to your main screen
+        MaterialPageRoute(builder: (context) => OtpSendView()), // Link to your main screen
       );
     });
   }
@@ -58,9 +58,9 @@ class _SplashScreenState extends State<SplashScreen>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: const Color(0xff43115B),
+                  color: Color(0xff43115B),
                 ),
                 padding: const EdgeInsets.all(20),
                 child: const Icon(

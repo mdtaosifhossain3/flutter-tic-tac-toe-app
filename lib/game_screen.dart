@@ -30,6 +30,7 @@ class _GameScreenState extends State<GameScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: const Color(0xff5A1E76),
 
       body: Center(
