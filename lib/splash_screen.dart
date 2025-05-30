@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/otpView/otp_send_view.dart';
+import 'package:tic_tac_toe/game_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -36,7 +36,9 @@ class _SplashScreenState extends State<SplashScreen>
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => OtpSendView()), // Link to your main screen
+        MaterialPageRoute(
+            builder: (context) =>
+                const GameScreen()), // Link to your main screen
       );
     });
   }
@@ -50,43 +52,82 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff5A1E76),
-      body: Center(
-        child: ScaleTransition(
-          scale: _scaleAnimation,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color(0xff43115B),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xff5A1E76), Color(0xff24BCE7)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: ScaleTransition(
+            scale: _scaleAnimation,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xff24BCE7).withValues(alpha: 0.6),
+                        blurRadius: 32,
+                        spreadRadius: 8,
+                      ),
+                    ],
+                    gradient: const LinearGradient(
+                      colors: [Color(0xff43115B), Color(0xff24BCE7)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  padding: const EdgeInsets.all(28),
+                  child: const Icon(
+                    Icons.games,
+                    color: Colors.white,
+                    size: 100,
+                    shadows: [
+                      Shadow(
+                        color: Color(0xff24BCE7),
+                        blurRadius: 16,
+                        offset: Offset(0, 0),
+                      ),
+                    ],
+                  ),
                 ),
-                padding: const EdgeInsets.all(20),
-                child: const Icon(
-                  Icons.games,
-                  color: Color(0xff24BCE7),
-                  size: 100,
+                const SizedBox(height: 32),
+                const Text(
+                  "Tic Tac Toe",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 38,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2,
+                    fontFamily: 'Roboto',
+                    shadows: [
+                      Shadow(
+                        color: Colors.black26,
+                        blurRadius: 8,
+                        offset: Offset(2, 2),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                "Tic Tac Toe",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+                const SizedBox(height: 16),
+                const Text(
+                  "Get Ready to Play!",
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 1,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                "Get Ready to Play!",
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 16,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

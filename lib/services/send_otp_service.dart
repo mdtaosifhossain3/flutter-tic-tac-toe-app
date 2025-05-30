@@ -8,7 +8,6 @@ import 'package:tic_tac_toe/game_screen.dart';
 
 import '../otpView/otp_verify_view.dart';
 
-
 class SendOTPService {
   // Function to validate if the input is a valid mobile number
   bool _isValidMobile(String mobile) {
@@ -79,6 +78,7 @@ class SendOTPService {
       );
 
       var body = response.body;
+
       final statusCode = _extractValue(body, 'Status code').trim();
       final result = statusCode.replaceAll(":", "").trim();
       Navigator.pop(context);
@@ -96,17 +96,14 @@ class SendOTPService {
           const SnackBar(content: Text('OTP sent successfully')),
         );
       } else if (result == "E1351") {
-        Navigator.pop(context);
         //OTP Verification Page
         Navigator.push(context, MaterialPageRoute(builder: (_) {
-          return  const GameScreen();
+          return const GameScreen();
         }));
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Welcome Back!')),
         );
       } else {
-        //  print(response.body); // Error occurred
-        Navigator.pop(context);
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
               content: Text('Please Enter a valid Robi/Airtel Number')),
